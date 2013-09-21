@@ -1,0 +1,54 @@
+Name of the guide.
+ IRIS 
+Total number of regions used.
+13
+**************************** SECTION 1 *****************************
+Entrance of guide coordinates: x1, y1
+0.0, 171.3
+Angle between guide axis and "Y" axis in radians
+0.0 
+Length, Width, Height and Radius of Curvature 
+for the first section of the guide
+196.8, 4.5, 6.7, 0.0
+Number of neutrons
+10000
+Moderator and Sample dimensions
+9.0, 10.0, 2.0, 3.0
+Number of wavelengths, first wavelength and wavelength increment
+38, 2.0, 0.5
+Angle between moderator plane and guide entrance plane in degrees
+13.                                      
+Angular range over which neutrons are accepted (times the critical angle).
+1. 
+Separation between guide exit and sample plane
+44.
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 1.00, 0.01, 196.8, 0.00173
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 2 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+6.7, 4.5, 6.7, 0.0
+Separation between guide exit and sample plane
+44.
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.0, 0.01, 6.7, 0.00
+Is this a reflective region?
+N
+Is this region a deflector?
+N
+Is this region tapered or curved?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+N

@@ -1,0 +1,36 @@
+Name of the guide.
+ ONE SECTION
+Total number of regions used.
+1
+**************************** SECTION 1 *****************************
+Entrance of guide coordinates: x1, y1
+0.0, 171.3
+Angle between guide axis and "Y" axis in radians
+0. 
+Length, Width, Height and Radius of Curvature 
+for the first section of the guide
+150.0, 4.5, 6.7, 0.0
+Number of neutrons
+10000
+Moderator and Sample dimensions
+9.0, 10.0, 2.2, 4.4
+Number of wavelengths, first wavelength and wavelength increment
+47, 2.0, 0.5
+Angle between moderator plane and guide entrance plane in degrees
+11.3                                      
+Angular range over which neutrons are accepted (times the critical angle).
+1. 
+Separation between guide exit and sample plane
+1.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 150.0, 0.00346
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+N

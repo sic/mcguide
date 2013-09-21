@@ -1,0 +1,320 @@
+Name of the guide.
+ OSIRIS 7th
+Total number of regions used.
+15
+**************************** SECTION 1 *****************************
+Entrance of guide coordinates: x1, y1
+0.0, 171.3
+Angle between guide axis and "Y" axis in radians
+0. 
+Length, Width, Height and Radius of Curvature 
+for the first section of the guide
+150.0, 4.5, 6.7, 0.0
+Number of neutrons
+10000
+Moderator and Sample dimensions
+9.0, 10.0, 2.2, 4.4
+Number of wavelengths, first wavelength and wavelength increment
+1, 2.0, 0.0
+Angle between moderator plane and guide entrance plane in degrees
+11.3                                      
+Angular range over which neutrons are accepted (times the critical angle).
+1. 
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 50.0, 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 2 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+46.8, 4.5, 6.7, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 46.8, 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region curved or tapered?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 3 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+7.85, 4.5, 6.7, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.0, 0.01, 7.85, 0.0
+
+N
+Is this a reflective region?
+N
+Is this region a deflector?
+N
+Is this region curved or tapered?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 4 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+200.0, 4.3, 6.5, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 50.0, 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region curved or tapered?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 5 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+43.0, 4.3, 6.5, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 43., 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 6 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+11.75, 4.3, 6.5, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.0, 0.01, 11.75, 0.0
+
+N
+Is this a reflective region?
+N
+Is this region a deflector?
+N
+Is this region tapered or curved?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 7 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+300.0, 4.3, 6.5, 205000.
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 50.0, 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+Y
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 8 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+68.2, 4.3, 6.5, 205000.
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 34.1, 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+Y
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 9 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+7.56, 4.3, 6.5, 205000.
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.0, 0.01, 7.56, 0.0
+
+N
+Is this a reflective region?
+N
+Is this region a deflector?
+N
+Is this region tapered or curved?
+Y
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 10 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+2100.0, 4.3, 6.5, 205000.
+Separation between guide exit and sample plane
+25.
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 50., 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+Y
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 11 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+64.39, 4.3, 6.5, 205000.
+Separation between guide exit and sample plane
+25.
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 32.195, 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+Y
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 12 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+1.15, 4.3, 6.5, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.0, 0.01, 1.15, 0.0
+
+N
+Is this a reflective region?
+N
+Is this region a deflector?
+N
+Is this region tapered or curved?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 13 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+50.0, 4.3, 6.5, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.92, 0.01, 50., 0.00346
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 14 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+3.0, 4.3, 6.5, 0.0
+Separation between guide exit and sample plane
+25.0
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.0, 0.01, 3.0, 0.0
+
+N
+Is this a reflective region?
+N
+Is this region a deflector?
+N
+Is this region tapered or curved?
+N
+Another region or repeat the last one (YES,NO,REPEAT)
+Y
+**************************** SECTION 15 *****************************
+Length, Width, Height and Radius of Curvature 
+for other sections of the guide
+150.0, 4.3, 6.5, 0.0
+Separation between guide exit and sample plane
+25.
+Surface waviness, reflection coefficient, S.D. of abutment error,
+length of glass section within region and
+critical angle per unit of wave length
+0.0, 0.70, 0.01, 150.0, 0.00692
+
+N
+Is this a reflective region?
+Y
+Is this region a deflector?
+N
+Is this region tapered or curved?
+Y
+Width and Height at the exit of the guide
+2.9, 5.1
+Another region or repeat the last one (YES,NO,REPEAT)
+N
