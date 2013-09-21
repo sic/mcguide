@@ -1,0 +1,13 @@
+What do you need to run the program.
+
+First of all it is easier to explain how the program is split up.
+
+There are two main parts to the program....
+
+	(1) A Guide Builder Program
+   and  (2) The Monte Carlo Simulation
+
+In order to run the Monte Carlo it is first necessary to provide it with a discription 
+of the guide that you are using.  This is done by constructing an input file (BR.IN) and
+running it through the Guide Builder program, which generates the data files required by
+MCGUIDE.

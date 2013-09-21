@@ -1,0 +1,14 @@
+
+;==========================================================================
+; Routine to move the neutron a distance EXDIST taking into account gravity
+;==========================================================================
+
+	subroutine moveit(exdist)
+
+
+	common/neutron/x,y,z,vx,vy,vz,spin,
+
+	return
+	end
+
+

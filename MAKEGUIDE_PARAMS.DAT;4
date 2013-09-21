@@ -1,0 +1,41 @@
+Parameter description file for MAKEGUIDE.COM
+********************************************
+
+brfile 	= "br.in"
+optfile = "options.in"
+
+name	= name of Simulation (used in all input files)
+times	= no. of times for MCGUIDE to be run from spectra
+nhist	= no. of neutron histories for each loop
+reg	= no. of guide regions 
+N	= counter, indicating number of present guide being calculated
+x	= x - coord of guide entrance
+y	= y - coord of guide entrance
+thet	= theta: angle between guide axis and y-axis (radians)
+length	= length of guide region
+width	= width of guide region
+height	= height of guide region
+rad	= radius of curvature for region
+xm,ym	= dimensions of moderator (width,height)
+xs,ys	= dimensions of sample (width,height)
+nw	= no. of neutron wavelengths
+wavi	= first wavelength to be calculated
+step	= incremental value for wavelength
+phi	= angle between moderator plane and guide entrance (degrees)
+tp	= angular range over which neutrons are accepted
+sep	= separation between guide exit and sample
+wav	= surface waviness
+rc	= reflection coefft
+std	= std. dev. of abutment error
+gl	= length of glass used for region
+m	= critical angle per unit wavelength
+pc	= polarization coefft (1=polarisinf, 0=non-polarising)
+oa	= orientation angle of bender w.r.t previous region
+bdans	= bender? (Y/N)
+subst	= no. of internal substrates for the bender
+refans	= Reflective region? (Y/N)
+defans	= Deflector region? (Y/N)
+tapeans	= Tapered/Curved Region? (Y/N)
+xex	= width of tapered exit
+yex	= height of tapered exit
+anoans	= Another Region? (Y/N/R)                          

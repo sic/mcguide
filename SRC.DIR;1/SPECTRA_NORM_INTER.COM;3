@@ -1,0 +1,2 @@
+$ FORTRAN/OLD_F77/ALIGN=COMMON=NATURAL/real=64/EXT spectra,mc_inter
+$ LINK spectra, mc_inter, nagf/opt
