@@ -1,5 +1,5 @@
 *	This program simulates a time of flight neutron spectrometer
-*	Author: David Martin.
+*	Author: David Martin / Stuart Campbell
 	
 	program spectra
 
