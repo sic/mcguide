@@ -1,4 +1,3 @@
-
 	SUBROUTINE MCGUIDE(nwav,wave,wgxe,sgxe,syme,fille,
      *                      ftranse,delole,avrefe)
 
