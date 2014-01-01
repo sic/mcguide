@@ -1,0 +1,168 @@
+ENGINX                                 
+
+umber of neutrons, number of surfaces and number of regions.
+    10000        19         3
+
+oefficients of the first surface, guide entrance,in this order: 
+^2, X, Y^2, Y, Z^2, Z, INDEPENDENT, X*Y, Y*Z, Z*X
+  0.000000E+00   0.000000E+00   0.000000E+00   0.250000E+01   0.000000E+00
+  0.000000E+00  -0.875000E+03   0.000000E+00   0.000000E+00   0.000000E+00
+
+oefficients of the second surface, sample plane, with respect to a 
+oordinate system located at the guide exit.
+  0.000000E+00  -0.152459E-01   0.000000E+00   0.249995E+01   0.000000E+00
+  0.000000E+00  -0.375000E+03   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  2
+  0.000000E+00   0.400000E+03   0.000000E+00   0.000000E+00   0.000000E+00
+  0.000000E+00   0.500000E+03   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  3
+  0.000000E+00   0.000000E+00   0.000000E+00   0.250000E+01   0.000000E+00
+  0.000000E+00  -0.187500E+04   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  4
+  0.000000E+00   0.400000E+03   0.000000E+00   0.000000E+00   0.000000E+00
+  0.000000E+00  -0.500000E+03   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  5
+  0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+  0.100000E+01  -0.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  6
+  0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+  0.100000E+01   0.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  7
+  0.000000E+00   0.000000E+00   0.000000E+00  -0.500000E+06   0.000000E+00
+  0.000000E+00   0.375000E+09   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  8
+  0.100000E+01   0.100000E+07   0.100000E+01  -0.150000E+04   0.000000E+00
+  0.000000E+00  -0.687502E+06   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface  9
+  0.000000E+00   0.304918E+04   0.000000E+00  -0.499991E+06   0.000000E+00
+  0.000000E+00   0.189958E+10   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 10
+  0.100000E+01   0.100000E+07   0.100000E+01  -0.150000E+04   0.000000E+00
+  0.000000E+00   0.181250E+07   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 11
+  0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+  0.100000E+01  -0.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 12
+  0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+  0.100000E+01   0.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 13
+  0.000000E+00  -0.152459E-01   0.000000E+00   0.249995E+01   0.000000E+00
+  0.000000E+00  -0.949792E+04   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 14
+  0.000000E+00   0.109998E+04   0.000000E+00   0.670820E+01   0.000000E+00
+  0.000000E+00  -0.138835E+05   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 15
+  0.000000E+00  -0.152459E-01   0.000000E+00   0.249995E+01   0.000000E+00
+  0.000000E+00  -0.122479E+05   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 16
+  0.000000E+00   0.109998E+04   0.000000E+00   0.670820E+01   0.000000E+00
+  0.000000E+00  -0.166335E+05   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 17
+  0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+  0.100000E+01  -0.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+oefficients of surface 18
+  0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00   0.000000E+00
+  0.100000E+01   0.400000E+01   0.000000E+00   0.000000E+00   0.000000E+00
+
+
+he second value is "igeom" for the sample plane surface and equals zero.
+Igeom" values in region:  1.
+1 0 1-1-1-1 1 0 0 0 0 0 0 0 0 0 0 0 0
+
+Igeom" values in region:  2.
+0 0 0 0 0 0 0 1-1-1 1-1 1 0 0 0 0 0 0
+
+Igeom" values in region:  3.
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 1-1-1-1 1
+
+eflecting character of each surface within a region:
+
+ non-reflecting surface, 1 reflecting surface.
+iewing from the top: guide section entrance, left hand side
+uide section exit, right hand side, top and bottom.
+he second value is "irefl" for the sample plane surface and equals zero.
+Irefl" values in region:  1.
+0 0 1 0 1 1 1 0 1 0 1 1 1 0 1 0 1 1 1
+
+Irefl" values in region:  2.
+0 0 1 0 1 1 1 0 1 0 1 1 1 0 1 0 1 1 1
+
+Irefl" values in region:  3.
+0 0 1 0 1 1 1 0 1 0 1 1 1 0 0 0 0 1 1
+
+Y" coordinate of the guide entrance and guide dimensions: 
+idth and height
+  350.000     2.500     8.000
+
+oderator dimensions: width and height
+    9.000    10.000
+
+ample dimensions: width and height
+    0.500     1.000
+
+ngle with respect to "Y" axis, x coordinate and y coordinate
+f the exit of the guide
+0.60984000000D-02   -16.0057902  4899.1606451
+
+umber of selected wavelengths, first wavelength and
+avelength increment for region:
+        1      2.50      1.00
+
+urface waviness, reflection coefficient, standard deviation of abutment
+rror, section length and critical angle in
+egion:   1
+      0.000000       0.920000       0.010000      50.000000       0.005190
+
+egion:   2
+      0.000000       0.920000       0.010000      50.000000       0.005190
+
+egion:   3
+      0.000000       0.920000       0.010000      50.000000       0.005190
+
+ngle between moderator and "Y-axis" (degrees).
+   11.300
+
+ngular range over which neutrons are selected
+(times the critical angle).
+    1.000
+
+urface Flag = 1 for internal surface
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+
+ritical angle per unit wavelength, Reflection Coeff,Polarizing efficiency.
+ 0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+���������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������
