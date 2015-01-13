@@ -25,7 +25,7 @@
 *       reflections coefficients of a supermirror surface.
 
         IMPLICIT REAL (A-H,O-Z)
-        REAL G05CBF, G05CCF, G05DAF
+C        REAL G05CBF, G05CCF, G05DAF
 
 *       Extra definitions for VAX
 
@@ -62,7 +62,7 @@
         OPEN(UNIT=13,FILE='SAMPLE.OUT',STATUS='NEW')
 *       OPEN(UNIT=14,FILE='FLUX.OUT',STATUS='NEW')
 
-	open(unit=19,file='flight-path.dat',status='new')
+	      open(unit=19,file='flight-path.dat',status='new')
 
 *       This file is FKMAINDR.GUIDES.SIMFTN. It was last modified on 21.5.79
 *       ......MWJ
@@ -72,9 +72,10 @@
 
 *       Warm up random generator here
 
-        DO I = 1, 1000
-                CALL G05DAF(-1.,1.)
-        ENDDO
+C        DO I = 1, 1000
+C                CALL RANDOM_NUMBER()
+C                CALL G05DAF(-1.,1.)
+C        ENDDO
 
 *       Date time on the VAX
 
@@ -440,7 +441,7 @@
         Z = Z + VZ*DD
 
         write(19,*) vlhist
-	
+
 
 *       Now bin neutrons at sample plane.
 
@@ -705,15 +706,24 @@
 
         SUBROUTINE START
         IMPLICIT REAL (A-H,O-Z)
-        REAL G05DAF
+C        REAL G05DAF
+        DOUBLE PRECISION RANDOM_VALUE
         COMMON/GUIDE/VL,GX,GZ,DELTA
         COMMON/DIR/VX,VY,VZ
         COMMON/DEF/X,Y,Z,IREG
-        X = G05DAF(-1.,1.)*GX/2.0
+        CALL RANDOM_NUMBER(RANDOM_VALUE)
+*        X = G05DAF(-1.,1.)*GX/2.0
+        X = ((2*RANDOM_VALUE) - 1.0)*GX/2.0
         Y = VL
-        Z = G05DAF(-1.,1.)*GZ/2.0
-        VX = DSIN(G05DAF(-1.,1.)*DELTA)
-        VZ = DSIN(G05DAF(-1.,1.)*DELTA)
+*        Z = G05DAF(-1.,1.)*GZ/2.0
+        CALL RANDOM_NUMBER(RANDOM_VALUE)
+        Z = ((2*RANDOM_VALUE) - 1.0)*GZ/2.0
+C        VX = DSIN(G05DAF(-1.,1.)*DELTA)
+        CALL RANDOM_NUMBER(RANDOM_VALUE)
+        VX = DSIN(((2*RANDOM_VALUE) - 1.0)*DELTA)
+C        VZ = DSIN(G05DAF(-1.,1.)*DELTA)
+        CALL RANDOM_NUMBER(RANDOM_VALUE)
+        VZ = DSIN(((2*RANDOM_VALUE) - 1.0)*DELTA)
         VY = DSQRT(1.0 - VX*VX -VZ*VZ)
         RETURN
         END
@@ -771,7 +781,8 @@
 
         SUBROUTINE WOBBLE
         IMPLICIT REAL (A-H,O-Z)
-        REAL G05DAF
+C        REAL G05DAF
+        REAL RANDOM_VALUE
         REAL EXDIST
         INTEGER*2 IGEOM(100,100)
         COMMON/GLASS/BETA(100),ABUT(100),CREF(100),GLENG(100),GAMMB(100)
@@ -809,7 +820,9 @@
         CALL NORM(XL,YL,ZL)
         ANGLD2 = ANGL/2.0
         ANGLM = DMIN1(ANGLD2,BETA(IREG))
-        DEV = (BETA(IREG)+ANGLM)*G05DAF(0.,1.) - ANGLM
+C        DEV = (BETA(IREG)+ANGLM)*G05DAF(0.,1.) - ANGLM
+        CALL RANDOM_NUMBER(RANDOM_VALUE)
+        DEV = (BETA(IREG)+ANGLM)*RANDOM_VALUE - ANGLM
         ANGLF = ANGLI + DEV*2.0
 
 *       The next line changes DEV according to the surface normal direction
@@ -822,7 +835,9 @@
         XM = VY*CP - VZ*BP
         YM = VZ*AP - VX*CP
         ZM = VX*BP - VY*AP
-        DEV = BETA(IREG)*G05DAF(-1.,1.)
+        CALL RANDOM_NUMBER(RANDOM_VALUE)
+*        DEV = BETA(IREG)*G05DAF(-1.,1.)
+        DEV = BETA(IREG)*((2.0*RANDOM_VALUE)-1.0)
         DXM = XM*DEV
         DYM = YM*DEV
         DZM = ZM*DEV
@@ -949,7 +964,8 @@ C                 ANGLI        -  THE INCOMMING ANGLE TO THE IDEAL
 C                                 SURFACE
 C                 ANGLF        -  THE OUTGOING ANGLE
       IMPLICIT REAL (A-H,O-Z)
-      REAL G05DAF
+C      REAL G05DAF
+      REAL RANDOM_VALUE
       COMMON/GLASS/BETA(100),ABUT(100),CREF(100),GLENG(100),GAMMB(100)
      1,GAMMA(100)
       COMMON/ANGG/ANGLI,ANGLF,LABUT,ANGL,AP,BP,CP
@@ -959,10 +975,12 @@ C                 ANGLF        -  THE OUTGOING ANGLE
       GL = GLENG(IREG)
 C PLL = PROB OF LANDING LOSS
       PLL = SIG/(2.5066*GL*ANGLI)
-      IF(G05DAF(0.,1.).LT.PLL) GO TO 99
+      CALL RANDOM_NUMBER(RANDOM_VALUE)
+      IF(RANDOM_VALUE.LT.PLL) GO TO 99
 C PTL = PROB. OF TAKE-OFF LOSS
       PTL = SIG/(2.5066*GL*ANGLF)
-      IF(G05DAF(0.,1.).LT.PTL) GO TO 99
+      CALL RANDOM_NUMBER(RANDOM_VALUE)
+      IF(RANDOM_VALUE.LT.PTL) GO TO 99
       RETURN
 99      LABUT = 0
       RETURN

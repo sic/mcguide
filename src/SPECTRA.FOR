@@ -1,17 +1,17 @@
 *	This program simulates a time of flight neutron spectrometer
 *	Author: David Martin.
 *	Modified by Stuart Campbell to take into account a simluation
-*	of the complete instrument. (20/11/96)	
-	
+*	of the complete instrument. (20/11/96)
+
 	program spectra
 
 	integer totwaves, totimes
 	parameter (totwaves=100, totimes=100)
 	integer guideopt, ntimes, nwav
-	real wav(totwaves), wgxe(totwaves), sgxe(totwaves) 
-	real sample(totwaves, totimes), exit(totwaves, totimes)  
+	real wav(totwaves), wgxe(totwaves), sgxe(totwaves)
+	real sample(totwaves, totimes), exit(totwaves, totimes)
 	real upgxe(totwaves), downgxe(totwaves)
-	real up(totwaves, totimes), down(totwaves, totimes)  
+	real up(totwaves, totimes), down(totwaves, totimes)
 	real syme(totwaves), ratio(totwaves, totimes)
 	real fille(totwaves), illu(totwaves, totimes)
 	real ftranse(totwaves), trans(totwaves, totimes)
@@ -35,10 +35,10 @@
 	real dmean(totwaves), delta_dev(totwaves), delta_variance(totwaves)
 	real sumx, reflex_arg_var, reflex_var
 	real xmean(totwaves), reflex_dev(totwaves), reflex_variance(totwaves)
-	real g05cbf, g05ccf, g05daf
+C	real g05cbf, g05ccf, g05daf
 	character*40 name
 	external mcguide
-	
+
 	open(unit=10, file='options.in', status='old')
 	open(unit=15, file='end.out', status='new')
 	open(unit=20, file='final.out', status='new')
@@ -49,7 +49,7 @@
 	open(unit=70, file='reflect.out', status='new')
 *        open(unit=80, file='up.out', status='new')
 *        open(unit=90, file='down.out', status='new')
-        
+
 	read(10,*) name
 	read(10,*)
 	read(10,*) guideopt, ntimes
@@ -59,7 +59,7 @@
 	if(guideopt.eq.1)then         				! Simulating just a guide
 
 *	initializing random number generator with a repeteable seed.
-  		call g05cbf(0)
+C  		call g05cbf(0)
 
 *	simulating neutron flux at guide exit and sample plane.
 	   	do j = 1, ntimes
@@ -75,15 +75,15 @@
 		      		sample(i,j) = sgxe(i)
 				ratio(i,j) = syme(i)
 				illu(i,j) = fille(i)
-				trans(i,j) = ftranse(i)	
+				trans(i,j) = ftranse(i)
 				delta(i,j) = delole(i)
-				reflex(i,j) = avrefe(i)			
+				reflex(i,j) = avrefe(i)
 			enddo
-		enddo	
+		enddo
 
 
 *	calculating mean values and standard deviation.
-		do i = 1, nwav	
+		do i = 1, nwav
 			sume = 0.
 			vare = 0.
 			sum = 0.
@@ -127,14 +127,14 @@
 			enddo
 			upvariance(i) = (1./(ntimes-1.))*upvar
 			updev(i) = sqrt(upvariance(i))
-                        
+
 			do j = 1, ntimes
 				arg_down = down(i,j)-downmean(i)
 				downvar = arg_down*arg_down + downvar
 			enddo
 			downvariance(i) = (1./(ntimes-1.))*downvar
 			downdev(i) = sqrt(downvariance(i))
-                        
+
 
 
 			do j = 1, ntimes
@@ -150,7 +150,7 @@
 			enddo
 			variance(i) = (1./(ntimes-1.))*var
 			dev(i) = sqrt(variance(i))
-                        
+
         		do j = 1, ntimes
 				rat_arg_var = ratio(i,j)-rmean(i)
 				rat_var = rat_arg_var*rat_arg_var + rat_var
@@ -167,7 +167,7 @@
 
         		do j = 1, ntimes
 				trans_arg_var = trans(i,j)-tmean(i)
-				trans_var = trans_arg_var*trans_arg_var + 
+				trans_var = trans_arg_var*trans_arg_var +
      *				trans_var
 			enddo
 			trans_variance(i) = (1./(ntimes-1.))*trans_var
@@ -175,7 +175,7 @@
 
         		do j = 1, ntimes
 				delta_arg_var = delta(i,j)-dmean(i)
-				delta_var = delta_arg_var*delta_arg_var + 
+				delta_var = delta_arg_var*delta_arg_var +
      *				delta_var
 			enddo
 			delta_variance(i) = (1./(ntimes-1.))*delta_var
@@ -183,7 +183,7 @@
 
         		do j = 1, ntimes
 				reflex_arg_var = reflex(i,j) - xmean(i)
-				reflex_var = reflex_arg_var*reflex_arg_var + 
+				reflex_var = reflex_arg_var*reflex_arg_var +
      *				reflex_var
 			enddo
 			reflex_variance(i) = (1./(ntimes-1.))*reflex_var
@@ -198,58 +198,58 @@
 
 		write(15,100)name
 		write(15,215)
-		write(15,*)                            
+		write(15,*)
 *		write(15,*) nwav
 		write(15,315) (wav(i), emean(i), edev(i), i = 1, nwav)
-                
+
 *		write(80,100) name
 *		write(80,*)'up spins'
 *		write(80,215)
-*		write(80,*)                            
+*		write(80,*)
 *		write(80,315) (wav(i), upmean(i), updev(i), i = 1, nwav)
-                
+
 *		write(90,100) name
 *		write(90,*)'down spins'
 *		write(90,215)
-*		write(90,*)                            
+*		write(90,*)
 *		write(90,315) (wav(i), downmean(i), downdev(i), i = 1, nwav)
-                
+
 
 
 
 		write(20,100)name
 		write(20,220)
-		write(20,*)                            
+		write(20,*)
 *		write(20,*) nwav
 		write(20,320) (wav(i), smean(i), dev(i), i = 1, nwav)
 
 		write(30,100)name
 		write(30,230)
-		write(30,*)                            
+		write(30,*)
 *		write(30,*) nwav
 		write(30,330) (wav(i), rmean(i), rat_dev(i), i = 1, nwav)
 
 		write(40,100)name
 		write(40,240)
-		write(40,*)                            
+		write(40,*)
 *		write(40,*) nwav
 		write(40,340) (wav(i), imean(i), illu_dev(i), i = 1, nwav)
 
 		write(50,100)name
 		write(50,250)
-		write(50,*)                            
+		write(50,*)
 *		write(50,*) nwav
 		write(50,350) (wav(i), tmean(i), trans_dev(i), i = 1, nwav)
 
 		write(60,100)name
 		write(60,260)
-		write(60,*)                            
+		write(60,*)
 *		write(60,*) nwav
 		write(60,360) (wav(i), dmean(i), delta_dev(i), i = 1, nwav)
 
 		write(70,100)name
 		write(70,270)
-		write(70,*)                            
+		write(70,*)
 *		write(70,*) nwav
 		write(70,370) (wav(i), xmean(i), reflex_dev(i), i = 1, nwav)
 
@@ -257,7 +257,7 @@
 
 
 	if (guideopt.eq.2) then  						! OSIRIS
-             
+
 	endif
 
 
@@ -290,4 +290,3 @@
 
 	stop
 	end
-
