@@ -1,6 +1,7 @@
 
         SUBROUTINE MCGUIDE(nwav,wave,wgxe,sgxe,syme,fille,
      *                      ftranse,delole,avrefe)
+
 *       This is the 'latest' (8-jan-1985) version (FKGUIDE43 on the IBM).
 *       The only change from FKGUIDE42 (the written up version) seems to
 *       be an extra write statement putting out the total number of transmitted
@@ -29,9 +30,12 @@ C        REAL G05CBF, G05CCF, G05DAF
 
 *       Extra definitions for VAX
 
-        INTEGER*2 LIB$DATE_TIME, LIB$INIT_TIMER, LIB$SHOW_TIMER, ISTATUS
+C        INTEGER*2 LIB$DATE_TIME, LIB$INIT_TIMER, LIB$SHOW_TIMER
+        INTEGER*2 ISTATUS
         INTEGER*2 HANDLE, RANDOM_ANSWER
         CHARACTER*40 DATETIME, NAME
+
+        DOUBLE PRECISION THETA
 
         REAL TGX(10,10),TS(10,10),TITLE(20),MX,MZ,TXX(10),TSE(10,10)
      $         , TITL1(20),TITL2(20),TITL3(20), TGXE(10,10)
@@ -79,9 +83,9 @@ C        ENDDO
 
 *       Date time on the VAX
 
-        ISTATUS = LIB$DATE_TIME(DATETIME)
+C        ISTATUS = LIB$DATE_TIME(DATETIME)
         HANDLE  = 0
-        ISTATUS = LIB$INIT_TIMER(HANDLE)
+C        ISTATUS = LIB$INIT_TIMER(HANDLE)
 
         READ(3,112)NAME
         READ(3,*)
@@ -186,14 +190,14 @@ C        ENDDO
      $                       GLENG(I), GAMMB(I)
         ENDDO
 
-        COST = DCOS(THETA)
-        SINT = DSIN(THETA)
+        COST = DCOS(DBLE(THETA))
+        SINT = DSIN(DBLE(THETA))
 
 *       Converting "FI" from degrees to radians.
 
         FI = FI * 0.017453293
-        TFI = DTAN(FI)
-        CFI = DCOS(FI)
+        TFI = DTAN(DBLE(FI))
+        CFI = DCOS(DBLE(FI))
 
 *       Initialize accumulators to zero
 
@@ -268,8 +272,8 @@ C        ENDDO
                         VP = - (YE - XE*TFI) / (VY - VX*TFI)
                         XM = XE + VP*VX
                         ZM = ZE + VP*VZ
-                        IF(DABS(XM).GT.(MX*CFI/2.0)) GO TO 61
-                        IF(DABS(ZM).GT.(MZ/2.0))  GO TO 61
+                        IF(DABS(DBLE(XM)).GT.(MX*CFI/2.0)) GO TO 61
+                        IF(DABS(DBLE(ZM)).GT.(MZ/2.0))  GO TO 61
                         VLHIST = EPSI
                         IREG = 0
                         NSTART = NSTART+1
@@ -310,7 +314,7 @@ C        ENDDO
 
 *       VAX double precision ARC SINE
 
-        ANGL = DASIN(AP*VX + BP*VY + CP*VZ)
+        ANGL = DASIN(DBLE(AP*VX + BP*VY + CP*VZ))
 
 *       Supermirror reflectivity coefficient treatment for each region.
 *       Based on PSI results (and hopes!) on 08.04.94.
@@ -318,7 +322,7 @@ C        ENDDO
         DO J = 1, NREG
 *       m = 2.0
            IF(GAMMB(J).EQ.0.00346)THEN
-              IF(DABS(ANGL).GT.GAMMA(IREG)/2.0)THEN
+              IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/2.0)THEN
                  CREF(J) = 0.92
               ELSE
                  CREF(J) = 0.999
@@ -327,13 +331,13 @@ C        ENDDO
 
 *       m = 2.4
            IF(GAMMB(J).EQ.0.004152)THEN
-              IF(DABS(ANGL).GT.GAMMA(IREG)/1.2)THEN
+              IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/1.2)THEN
                  CREF(J) = 0.85
               ELSE
-                 IF(DABS(ANGL).GT.GAMMA(IREG)/2.0)THEN
+                 IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/2.0)THEN
                     CREF(J) = 0.92
                  ELSE
-                    IF(DABS(ANGL).GT.GAMMA(IREG)/2.4)THEN
+                    IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/2.4)THEN
                        CREF(J) = 0.995
                     ELSE
                        CREF(J) = 0.999
@@ -344,13 +348,13 @@ C        ENDDO
 
 *       m = 3.0
            IF(GAMMB(J).EQ.0.00519)THEN
-              IF(DABS(ANGL).GT.GAMMA(IREG)/1.25)THEN
+              IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/1.25)THEN
                  CREF(J) = 0.80
               ELSE
-                 IF(DABS(ANGL).GT.GAMMA(IREG)/1.5)THEN
+                 IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/1.5)THEN
                     CREF(J) = 0.85
                  ELSE
-                    IF(DABS(ANGL).GT.GAMMA(IREG)/1.88)THEN
+                    IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/1.88)THEN
                        CREF(J) = 0.92
                     ELSE
                        CREF(J) = 0.999
@@ -361,16 +365,16 @@ C        ENDDO
 
 *       m = 4.0
            IF(GAMMB(J).EQ.0.00692)THEN
-              IF(DABS(ANGL).GT.GAMMA(IREG)/1.333333)THEN
+              IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/1.333333)THEN
                  CREF(J) = 0.60
               ELSE
-                 IF(DABS(ANGL).GT.GAMMA(IREG)/1.666667)THEN
+                 IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/1.666667)THEN
                     CREF(J) = 0.80
                  ELSE
-                    IF(DABS(ANGL).GT.GAMMA(IREG)/2.)THEN
+                    IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/2.)THEN
                        CREF(J) = 0.85
                     ELSE
-                       IF(DABS(ANGL).GT.GAMMA(IREG)/2.507)THEN
+                       IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)/2.507)THEN
                           CREF(J) = 0.92
                        ELSE
                           CREF(J) = 0.999
@@ -383,7 +387,7 @@ C        ENDDO
 
 *       End of the supermirror reflectivity coefficient treatment.
 
-        IF(DABS(ANGL).GT.GAMMA(IREG)) GOTO 21
+        IF(DABS(DBLE(ANGL)).GT.GAMMA(IREG)) GOTO 21
         LABUT = 1
         IF(ABUT(IREG).NE.0.) CALL ABUTL2
         IF(LABUT.EQ.0) GOTO 21
@@ -473,7 +477,7 @@ C        ENDDO
         WRITE(*,219)
         WRITE(2,219)
 
-        SIGMAL = DSQRT((VLM2 - (VLM1*VLM1/WGX))/WGX)
+        SIGMAL = DSQRT(DBLE((VLM2 - (VLM1*VLM1/WGX))/WGX))
         DELOL = (SIGMAL*WGX)/VLM1
         FILL = (1.0*NSTART/(NHIST-NENTL))
         FTRANS = WGX/(NSTART*WTC)
@@ -563,7 +567,7 @@ C        ENDDO
 *       Calculation of elapsed time etc... for VAX
 
         WRITE(6,216)
-        ISTATUS = LIB$SHOW_TIMER(HANDLE)
+C        ISTATUS = LIB$SHOW_TIMER(HANDLE)
 
         WAV = WAV
         WGX = WGX * 1.E+06
@@ -724,7 +728,7 @@ C        VX = DSIN(G05DAF(-1.,1.)*DELTA)
 C        VZ = DSIN(G05DAF(-1.,1.)*DELTA)
         CALL RANDOM_NUMBER(RANDOM_VALUE)
         VZ = DSIN(((2*RANDOM_VALUE) - 1.0)*DELTA)
-        VY = DSQRT(1.0 - VX*VX -VZ*VZ)
+        VY = DSQRT(DBLE(1.0 - VX*VX -VZ*VZ))
         RETURN
         END
 
@@ -804,7 +808,7 @@ C        REAL G05DAF
         CP = 2*E(I)*Z + F(I) + Q(I)*Y + R(I)*X
         CALL NORM(AP,BP,CP)
         DOTP = AP*VX + BP*VY + CP*VZ
-        ANGL = DABS(DASIN(DOTP))
+        ANGL = DABS(DASIN(DBLE(DOTP)))
         ANGLI = ANGL
         ANGLF = ANGL
 
@@ -828,7 +832,7 @@ C        DEV = (BETA(IREG)+ANGLM)*G05DAF(0.,1.) - ANGLM
 *       The next line changes DEV according to the surface normal direction
 *       with respect to the incident neutron.
 
-        DEV = DEV*DOTP/DABS(DOTP)
+        DEV = DEV*DOTP/DABS(DBLE(DOTP))
         DXL = XL*DEV
         DYL = YL*DEV
         DZL = ZL*DEV
@@ -853,7 +857,7 @@ C        DEV = (BETA(IREG)+ANGLM)*G05DAF(0.,1.) - ANGLM
 
         SUBROUTINE NORM(A,B,C)
         IMPLICIT REAL (A-H,O-Z)
-        F = DSQRT(A*A+B*B+C*C)
+        F = DSQRT(DBLE(A*A+B*B+C*C))
         IF(F.EQ.0.0) STOP 50
         A = A/F
         B = B/F
@@ -929,8 +933,8 @@ C WE NOW HAVE TO SOLVE THE QUADRATIC AA.T.T+BB.T+CC=0
       IF(DD.GE.0.) GOTO 3
       DIST=-2.0E4
       RETURN
-   3  DIST=(-BB+DSQRT(DD))/(2*AA)
-      DISS=(-BB-DSQRT(DD))/(2*AA)
+   3  DIST=(-BB+DSQRT(DBLE(DD)))/(2*AA)
+      DISS=(-BB-DSQRT(DBLE(DD)))/(2*AA)
       IF(DISS.GT.0..AND.DIST.GT.0.) GOTO 4
       IF(DISS.LT.0..AND.DIST.LT.0.) GOTO 5
       IF(DIST.GT.0.) RETURN
